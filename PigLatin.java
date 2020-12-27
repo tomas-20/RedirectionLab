@@ -9,6 +9,9 @@ public class PigLatin {
     }
     return false;
   }
+  private static boolean notLetter(char c) {
+    return c < 'a' || c > 'z';
+  }
   public static String pigLatinSimple(String s) {
     String first = s.substring(0, 1);
     if (in(first, vowels)) {
@@ -25,5 +28,17 @@ public class PigLatin {
       return s.substring(2) + start + "ay";
     }
     return pigLatinSimple(s);
+  }
+  public static String pigLatinBest(String s) {
+    s = s.toLowerCase();
+    if (notLetter(s.charAt(0))) {
+      return s;
+    }
+    int lastIndex = s.length() - 1;
+    char last = s.charAt(lastIndex);
+    if (notLetter(last)) {
+      return pigLatin(s.substring(0, lastIndex)) + last;
+    }
+    return pigLatin(s);
   }
 }
