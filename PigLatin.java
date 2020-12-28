@@ -41,4 +41,7 @@ public class PigLatin {
     }
     return pigLatin(s);
   }
+  public static void main(String[] args) {
+    ChangeFile.changeFile(false);
+  }
 }

@@ -11,6 +11,9 @@ public class ChangeFile {
         if (type) {
           next = MakeStars.stars(next);
         }
+        else {
+          next = PigLatin.pigLatinBest(next);
+        }
         System.out.print(next);
         hasNext = line.hasNext();
         if (hasNext) {
